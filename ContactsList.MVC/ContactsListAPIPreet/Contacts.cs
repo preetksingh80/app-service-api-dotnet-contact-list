@@ -17,7 +17,7 @@ using Newtonsoft.Json.Linq;
 
 namespace ContactsList.MVC
 {
-    internal partial class Contacts : IServiceOperations<ContactsListAPI>, IContacts
+    internal partial class Contacts : IServiceOperations<ContactsListAPIPreet>, IContacts
     {
         /// <summary>
         /// Initializes a new instance of the Contacts class.
@@ -25,17 +25,17 @@ namespace ContactsList.MVC
         /// <param name='client'>
         /// Reference to the service client.
         /// </param>
-        internal Contacts(ContactsListAPI client)
+        internal Contacts(ContactsListAPIPreet client)
         {
             this._client = client;
         }
         
-        private ContactsListAPI _client;
+        private ContactsListAPIPreet _client;
         
         /// <summary>
-        /// Gets a reference to the ContactsList.MVC.ContactsListAPI.
+        /// Gets a reference to the ContactsList.MVC.ContactsListAPIPreet.
         /// </summary>
-        public ContactsListAPI Client
+        public ContactsListAPIPreet Client
         {
             get { return this._client; }
         }

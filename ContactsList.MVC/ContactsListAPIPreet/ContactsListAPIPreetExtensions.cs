@@ -10,25 +10,25 @@ using Microsoft.Rest;
 
 namespace ContactsList.MVC
 {
-    public static partial class ContactsListAPIExtensions
+    public static partial class ContactsListAPIPreetExtensions
     {
         /// <param name='operations'>
-        /// Reference to the ContactsList.MVC.IContactsListAPI.
+        /// Reference to the ContactsList.MVC.IContactsListAPIPreet.
         /// </param>
         /// <param name='id'>
         /// Required.
         /// </param>
-        public static object GetContactById(this IContactsListAPI operations, int id)
+        public static object GetContactById(this IContactsListAPIPreet operations, int id)
         {
             return Task.Factory.StartNew((object s) => 
             {
-                return ((IContactsListAPI)s).GetContactByIdAsync(id);
+                return ((IContactsListAPIPreet)s).GetContactByIdAsync(id);
             }
             , operations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
         }
         
         /// <param name='operations'>
-        /// Reference to the ContactsList.MVC.IContactsListAPI.
+        /// Reference to the ContactsList.MVC.IContactsListAPIPreet.
         /// </param>
         /// <param name='id'>
         /// Required.
@@ -36,7 +36,7 @@ namespace ContactsList.MVC
         /// <param name='cancellationToken'>
         /// Cancellation token.
         /// </param>
-        public static async Task<object> GetContactByIdAsync(this IContactsListAPI operations, int id, CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public static async Task<object> GetContactByIdAsync(this IContactsListAPIPreet operations, int id, CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             Microsoft.Rest.HttpOperationResponse<object> result = await operations.GetContactByIdWithOperationResponseAsync(id, cancellationToken).ConfigureAwait(false);
             return result.Body;

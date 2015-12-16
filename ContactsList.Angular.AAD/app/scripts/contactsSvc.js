@@ -1,8 +1,8 @@
 ﻿'use strict';
 angular.module('contactsListApp')
 .factory('contactsSvc', ['$http', function ($http) {
-    //var apiEndpoint = "https://{your api app name}.azurewebsites.net";
-    var apiEndpoint = "https://localhost:44300";
+    var apiEndpoint = "https://contactslistapipreet.azurewebsites.net";
+    //var apiEndpoint = "https://localhost:44300";
 
     $http.defaults.useXDomain = true;
     delete $http.defaults.headers.common['X-Requested-With']; 

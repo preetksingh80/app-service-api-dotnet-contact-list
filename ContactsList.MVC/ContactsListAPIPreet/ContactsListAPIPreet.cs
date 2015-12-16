@@ -15,7 +15,7 @@ using Newtonsoft.Json.Linq;
 
 namespace ContactsList.MVC
 {
-    public partial class ContactsListAPI : ServiceClient<ContactsListAPI>, IContactsListAPI
+    public partial class ContactsListAPIPreet : ServiceClient<ContactsListAPIPreet>, IContactsListAPIPreet
     {
         private Uri _baseUri;
         
@@ -47,31 +47,31 @@ namespace ContactsList.MVC
         }
         
         /// <summary>
-        /// Initializes a new instance of the ContactsListAPI class.
+        /// Initializes a new instance of the ContactsListAPIPreet class.
         /// </summary>
-        public ContactsListAPI()
+        public ContactsListAPIPreet()
             : base()
         {
             this._contacts = new Contacts(this);
-            this._baseUri = new Uri("http://localhost:51864");
+            this._baseUri = new Uri("http://contactslistapipreet.azurewebsites.net");
         }
         
         /// <summary>
-        /// Initializes a new instance of the ContactsListAPI class.
+        /// Initializes a new instance of the ContactsListAPIPreet class.
         /// </summary>
         /// <param name='handlers'>
         /// Optional. The set of delegating handlers to insert in the http
         /// client pipeline.
         /// </param>
-        public ContactsListAPI(params DelegatingHandler[] handlers)
+        public ContactsListAPIPreet(params DelegatingHandler[] handlers)
             : base(handlers)
         {
             this._contacts = new Contacts(this);
-            this._baseUri = new Uri("http://localhost:51864");
+            this._baseUri = new Uri("http://contactslistapipreet.azurewebsites.net");
         }
         
         /// <summary>
-        /// Initializes a new instance of the ContactsListAPI class.
+        /// Initializes a new instance of the ContactsListAPIPreet class.
         /// </summary>
         /// <param name='rootHandler'>
         /// Optional. The http client handler used to handle http transport.
@@ -80,15 +80,15 @@ namespace ContactsList.MVC
         /// Optional. The set of delegating handlers to insert in the http
         /// client pipeline.
         /// </param>
-        public ContactsListAPI(HttpClientHandler rootHandler, params DelegatingHandler[] handlers)
+        public ContactsListAPIPreet(HttpClientHandler rootHandler, params DelegatingHandler[] handlers)
             : base(rootHandler, handlers)
         {
             this._contacts = new Contacts(this);
-            this._baseUri = new Uri("http://localhost:51864");
+            this._baseUri = new Uri("http://contactslistapipreet.azurewebsites.net");
         }
         
         /// <summary>
-        /// Initializes a new instance of the ContactsListAPI class.
+        /// Initializes a new instance of the ContactsListAPIPreet class.
         /// </summary>
         /// <param name='baseUri'>
         /// Optional. The base URI of the service.
@@ -97,7 +97,7 @@ namespace ContactsList.MVC
         /// Optional. The set of delegating handlers to insert in the http
         /// client pipeline.
         /// </param>
-        public ContactsListAPI(Uri baseUri, params DelegatingHandler[] handlers)
+        public ContactsListAPIPreet(Uri baseUri, params DelegatingHandler[] handlers)
             : this(handlers)
         {
             if (baseUri == null)
@@ -108,7 +108,7 @@ namespace ContactsList.MVC
         }
         
         /// <summary>
-        /// Initializes a new instance of the ContactsListAPI class.
+        /// Initializes a new instance of the ContactsListAPIPreet class.
         /// </summary>
         /// <param name='credentials'>
         /// Required. Credentials for authenticating with the service.
@@ -117,7 +117,7 @@ namespace ContactsList.MVC
         /// Optional. The set of delegating handlers to insert in the http
         /// client pipeline.
         /// </param>
-        public ContactsListAPI(ServiceClientCredentials credentials, params DelegatingHandler[] handlers)
+        public ContactsListAPIPreet(ServiceClientCredentials credentials, params DelegatingHandler[] handlers)
             : this(handlers)
         {
             if (credentials == null)
@@ -133,7 +133,7 @@ namespace ContactsList.MVC
         }
         
         /// <summary>
-        /// Initializes a new instance of the ContactsListAPI class.
+        /// Initializes a new instance of the ContactsListAPIPreet class.
         /// </summary>
         /// <param name='baseUri'>
         /// Optional. The base URI of the service.
@@ -145,7 +145,7 @@ namespace ContactsList.MVC
         /// Optional. The set of delegating handlers to insert in the http
         /// client pipeline.
         /// </param>
-        public ContactsListAPI(Uri baseUri, ServiceClientCredentials credentials, params DelegatingHandler[] handlers)
+        public ContactsListAPIPreet(Uri baseUri, ServiceClientCredentials credentials, params DelegatingHandler[] handlers)
             : this(handlers)
         {
             if (baseUri == null)

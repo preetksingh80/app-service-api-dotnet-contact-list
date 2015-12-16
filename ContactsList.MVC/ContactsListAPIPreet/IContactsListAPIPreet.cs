@@ -10,7 +10,7 @@ using Microsoft.Rest;
 
 namespace ContactsList.MVC
 {
-    public partial interface IContactsListAPI : IDisposable
+    public partial interface IContactsListAPIPreet : IDisposable
     {
         /// <summary>
         /// The base URI of the service.

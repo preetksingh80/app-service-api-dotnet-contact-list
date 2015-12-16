@@ -34,7 +34,7 @@ namespace ContactsList.API.Controllers
 {
     [HttpOperationExceptionFilterAttribute]
     // Uncomment the following line to enable CORS
-    //[EnableCors(origins: "*", headers: "*", methods: "*")]
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class ContactsController : ApiController
     {
         private const string FILENAME = "contacts.json";

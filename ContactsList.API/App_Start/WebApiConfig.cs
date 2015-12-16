@@ -12,7 +12,7 @@ namespace ContactsList.API
             // Web API configuration and services
 
             // Uncomment the following line to control CORS by using Web API code
-            //config.EnableCors();
+            config.EnableCors();
             
             // Web API routes
             config.MapHttpAttributeRoutes();

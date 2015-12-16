@@ -12,13 +12,13 @@ namespace CompanyContacts.API.Controllers
 {
     public class ContactsController : Controller
     {
-        //private ContactsListAPI db = new ContactsListAPI();
-        private ContactsListAPI db = new ContactsListAPI(new Uri("http://localhost:51864"));
+        private ContactsListAPIPreet Api = new ContactsListAPIPreet();
+        //private ContactsListAPIPreet Api = new ContactsListAPIPreet(new Uri("http://localhost:51864"));
 
         // GET: Contacts
         public ActionResult Index()
         {
-            return View(db.Contacts.Get());
+            return View(Api.Contacts.Get());
         }
 
         // GET: Contacts/Details/5
@@ -28,7 +28,7 @@ namespace CompanyContacts.API.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Contact contact = db.Contacts.Get().Single(c => c.Id == id);
+            Contact contact = Api.Contacts.Get().Single(c => c.Id == id);
             if (contact == null)
             {
                 return HttpNotFound();
@@ -51,8 +51,8 @@ namespace CompanyContacts.API.Controllers
         {
             if (ModelState.IsValid)
             {
-                contact.Id = db.Contacts.Get().OrderByDescending(c => c.Id).First().Id + 1;
-                db.Contacts.Post(contact);
+                contact.Id = Api.Contacts.Get().OrderByDescending(c => c.Id).First().Id + 1;
+                Api.Contacts.Post(contact);
                 return RedirectToAction("Index");
             }
 
@@ -66,7 +66,7 @@ namespace CompanyContacts.API.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Contact contact = db.Contacts.Get().Single(c => c.Id == id);
+            Contact contact = Api.Contacts.Get().Single(c => c.Id == id);
             if (contact == null)
             {
                 return HttpNotFound();
@@ -83,8 +83,8 @@ namespace CompanyContacts.API.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Contacts.Delete(contact.Id.Value);
-                db.Contacts.Post(contact);
+                Api.Contacts.Delete(contact.Id.Value);
+                Api.Contacts.Post(contact);
                 return RedirectToAction("Index");
             }
             return View(contact);
@@ -97,7 +97,7 @@ namespace CompanyContacts.API.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Contact contact = db.Contacts.Get().Single(c => c.Id == id);
+            Contact contact = Api.Contacts.Get().Single(c => c.Id == id);
             if (contact == null)
             {
                 return HttpNotFound();
@@ -110,7 +110,7 @@ namespace CompanyContacts.API.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            db.Contacts.Delete(id);
+            Api.Contacts.Delete(id);
             return RedirectToAction("Index");
         }
 
@@ -118,7 +118,7 @@ namespace CompanyContacts.API.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                Api.Dispose();
             }
             base.Dispose(disposing);
         }
